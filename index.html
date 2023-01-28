@@ -5,17 +5,36 @@
     <title>sandbox</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/html2pdf.js@latest/dist/html2pdf.bundle.min.js"></script>
+
 </head>
 <body>
     <h1>lorem ipsum</h1>
     <h2>chart & slider test</h2>
-    <div id="graph"></div>
+    <div id="graph1"></div>
     <div class="slidecontainer">
         <input type="range" min="1" max="10" value="2" class="slider" id="range">
     </div>
     <p id="outp"></p>
-    <p id="debug"></p>
+
+    <hr>
+    <h2>pdf test</h2>
+
+
+    <!-- create a button to download a pdf -->
+    <button id="change-pdf-content-visibility">enable text</button>
+    <p><i>text muss enabled sein, damit content in die pdf geschmissen wird. sonst wird <b>nur</b> der wert des range elements geprinted</i></p>
+    <div id="to-print-as-pdf" style="visibility: hidden">
+        <p>im a pdf</p>
+        <p>wololo!</p>
+        <p>you are a pdf aswell</p>
+    </div>
+    <button id="download-pdf">download pdf</button>
+
     <script src="slider_num_display.js"></script>
-    <script src="graph_display.js"></script>
+    <script src="graph1_display.js"></script>
+    <script src="download_pdf.js"></script>
+    <script src="change-content-vis.js"></script>
 </body>
 </html>
