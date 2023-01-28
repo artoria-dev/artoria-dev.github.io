@@ -11,7 +11,17 @@
 </head>
 <body>
     <h1>lorem ipsum</h1>
-    <h2>chart & slider test</h2>
+
+    <h2>toc</h2>
+    <ul>
+        <li><a href="#chart-slider-test">chart & slider test</a></li>
+        <li><a href="#pdf-test">pdf test</a></li>
+        <li><a href="#known-bugs">known bugs</a></li>
+    </ul>
+
+    <hr>
+
+    <h2 id="chart-slider-test">chart & slider test</h2>
     <div id="graph1"></div>
     <div class="slidecontainer">
         <input type="range" min="1" max="10" value="2" class="slider" id="range">
@@ -19,8 +29,8 @@
     <p id="outp"></p>
 
     <hr>
-    <h2>pdf test</h2>
 
+    <h2 id="pdf-test">pdf test</h2>
 
     <!-- create a button to download a pdf -->
     <button id="change-pdf-content-visibility">enable text</button>
@@ -31,6 +41,13 @@
         <p>you are a pdf aswell</p>
     </div>
     <button id="download-pdf">download pdf</button>
+
+    <hr>
+    <h2 id="known-bugs">known bugs</h2>
+    <ul>
+        <li>outp element wird nicht (mehr) geupdatet</li>
+        <li>nach dem pdf download muss die seite neu geladen werden damit die scripte wieder funzen ¯\_(ツ)_/¯</li>
+    </ul>
 
     <script src="slider_num_display.js"></script>
     <script src="graph1_display.js"></script>
