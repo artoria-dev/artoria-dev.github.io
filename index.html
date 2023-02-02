@@ -5,53 +5,45 @@
     <title>sandbox</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/html2pdf.js@latest/dist/html2pdf.bundle.min.js"></script>
-
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 </head>
 <body>
-    <h1>lorem ipsum</h1>
+<h1>lorem ipsum</h1>
 
-    <h2>toc</h2>
-    <ul>
-        <li><a href="#chart-slider-test">chart & slider test</a></li>
-        <li><a href="#pdf-test">pdf test</a></li>
-        <li><a href="#known-bugs">known bugs</a></li>
-    </ul>
+<h2>toc</h2>
+<ul>
+    <li><a href="#chart-slider-test">chart & slider test</a></li>
+    <li><a href="#pdf-test">pdf test</a></li>
+    <li><a href="#known-bugs">known bugs</a></li>
+</ul>
 
-    <hr>
+<hr>
 
-    <h2 id="chart-slider-test">chart & slider test</h2>
-    <div id="graph1"></div>
-    <div class="slidecontainer">
-        <input type="range" min="1" max="10" value="2" class="slider" id="range">
-    </div>
-    <p id="outp"></p>
+<!-- chart -->
+<h2 id="chart-slider-test">chart & slider test</h2>
+<div id="graph1"></div>
+<div class="slidecontainer">
+    <input type="range" min="1" max="10" value="2" class="slider" id="range">
+</div>
+<p>value: <input type="text" value="2" id="textbox"></p>
 
-    <hr>
+<hr>
 
-    <h2 id="pdf-test">pdf test</h2>
+<h2 id="pdf-test">pdf test</h2>
 
-    <!-- create a button to download a pdf -->
-    <button id="change-pdf-content-visibility">enable text</button>
-    <p><i>text muss enabled sein, damit content in die pdf geschmissen wird. sonst wird <b>nur</b> der wert des range elements geprinted</i></p>
-    <div id="to-print-as-pdf" style="visibility: hidden">
-        <p>im a pdf</p>
-        <p>wololo!</p>
-        <p>you are a pdf aswell</p>
-    </div>
-    <button id="download-pdf">download pdf</button>
+<!-- create a button to download a pdf -->
+<button id="download-pdf">download pdf</button>
 
-    <hr>
-    <h2 id="known-bugs">known bugs</h2>
-    <ul>
-        <li>outp element wird nicht (mehr) geupdatet</li>
-        <li>nach dem pdf download muss die seite neu geladen werden damit die scripte wieder funzen ¯\_(ツ)_/¯</li>
-    </ul>
+<hr>
 
-    <script src="slider_num_display.js"></script>
-    <script src="graph1_display.js"></script>
-    <script src="download_pdf.js"></script>
-    <script src="change-content-vis.js"></script>
+<!-- bugs -->
+<h2 id="known-bugs">known bugs</h2>
+<ul>
+    <li><s>outp element wird nicht (mehr) geupdatet ¯\_(ツ)_/¯</s></li>
+    <li>keine!</li>
+</ul>
+
+<script src="range_update.js"></script>
+<script src="download_pdf.js"></script>
 </body>
 </html>
