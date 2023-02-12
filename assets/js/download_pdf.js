@@ -2,10 +2,10 @@ const button = document.getElementById('download-pdf');
 
 function generatePDF() {
     printJS({
-        printable: 'graph1',
+        printable: 'graph',
         type: 'html',
         targetStyles: ['*'],
-        header: 'test WOLOLO'
+        header: 'Zielpfad in t CO2'
     })
 }
 

@@ -1,6 +1,10 @@
 let strom_netzbezogen_kwh = document.getElementById("strom_netzbezogen_in_kwh");
 let erdgasverbrauch_m3 = document.getElementById("erdgasverbrauch_in_m3");
 let wasser_m3 = document.getElementById("wasser_in_m3");
+let strom_netzbezogen_kwh_slider = document.getElementById("strom_netzbezogen_in_kwh_slider");
+let erdgasverbrauch_m3_slider = document.getElementById("erdgasverbrauch_in_m3_slider");
+let wasser_m3_slider = document.getElementById("wasser_in_m3_slider");
+let thg_output = document.getElementById("thg_sum");
 
 let emissionsfaktoren = {
     'heizöl': 1.1,
@@ -58,7 +62,6 @@ let zustandszahl_abnahmeort = 0.8981;
 let treibhausgasemissionen_leitungswasser_in_g_pro_l = 0.3604;
 
 function updateGraph() {
-
     let xVals = [], yVals = [];
 
     // calculate it !
@@ -67,7 +70,9 @@ function updateGraph() {
         emissionsfaktoren['erdgas']) * emissionsfaktoren_g_co2_pro_kwh['erdgas']) + ((wasser_m3.value * 1000) *
         treibhausgasemissionen_leitungswasser_in_g_pro_l)) / 1000000);
 
-    console.log(sum_in_t);
+    //console.log(sum_in_t);
+
+    thg_output.innerHTML = (Math.round(sum_in_t * 100) / 100).toString();
 
     // add keys from zielpfad_dritter_sektor to xVals
     for (let key in zielpfad_dritter_sektor) {
@@ -104,13 +109,33 @@ function updateGraph() {
         }
     };
 
-    Plotly.newPlot('graph2', data, layout);
+    Plotly.newPlot('graph', data, layout);
+}
+
+function updateTextBoxValues() {
+    strom_netzbezogen_kwh.value = strom_netzbezogen_kwh_slider.value;
+    erdgasverbrauch_m3.value = erdgasverbrauch_m3_slider.value;
+    wasser_m3.value = wasser_m3_slider.value;
+    updateGraph();
+}
+
+function updateSliderValues() {
+    strom_netzbezogen_kwh_slider.value = strom_netzbezogen_kwh.value;
+    erdgasverbrauch_m3_slider.value = erdgasverbrauch_m3.value;
+    wasser_m3_slider.value = wasser_m3.value;
+    updateGraph();
 }
 
 // add event listener
-strom_netzbezogen_kwh.addEventListener('input', updateGraph);
-erdgasverbrauch_m3.addEventListener('input', updateGraph);
-wasser_m3.addEventListener('input', updateGraph);
+
+strom_netzbezogen_kwh.addEventListener('input', updateSliderValues);
+erdgasverbrauch_m3.addEventListener('input', updateSliderValues);
+wasser_m3.addEventListener('input', updateSliderValues);
+
+strom_netzbezogen_kwh_slider.addEventListener('input', updateTextBoxValues);
+erdgasverbrauch_m3_slider.addEventListener('input', updateTextBoxValues);
+wasser_m3_slider.addEventListener('input', updateTextBoxValues);
+
 
 // initial call
 updateGraph();

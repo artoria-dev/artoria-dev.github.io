@@ -4,15 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - CERE</title>
+    <title>Login - CERE</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
     <link rel="stylesheet" href="assets/css/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark-icons.css">
     <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
-    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 </head>
 
 <body>
@@ -20,74 +17,27 @@
         <div class="container"><a class="navbar-brand logo" href="#">CERE</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <main class="page landing-page">
-        <section class="clean-block clean-hero" style="background: url(&quot;assets/img/tech/mountain_landscape_hdr-wallpaper-2560x1440.jpg&quot;);color: rgba(29,255,9,0.17);">
-            <div class="text">
-                <h2>Lorem ipsum dolor sit amet.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
-            </div>
-        </section>
-        <section class="clean-block clean-info dark">
+    <main class="page login-page">
+        <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info" style="--bs-primary: #0dfd42;--bs-primary-rgb: 13,253,66;--bs-info: #337822;--bs-info-rgb: 51,120,34;">CO2-Emissionsrechner</h2>
+                    <h2 class="text-info" style="--bs-info: #337822;--bs-info-rgb: 51,120,34;">Log In</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
                 </div>
-            </div>
-        </section>
-        <div class="container">
-            <div class="row">
-                <div class="col" style="margin-top: 7em;">
-                    <div>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>Strom (netzbezogen) in KwH</td>
-                                        <td><input type="text" value="2500" id="strom_netzbezogen_in_kwh" style="width: 100%;"><input class="form-range" id="strom_netzbezogen_in_kwh_slider" type="range" min="1000" max="10000" value="2500" style="width: 100%;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Erdgasverbrauch in m³</td>
-                                        <td><input type="text" value="3000" id="erdgasverbrauch_in_m3" style="width: 100%;"><input class="form-range" id="erdgasverbrauch_in_m3_slider" type="range" min="1000" max="10000" value="3000" style="width: 100%;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wasser in m³</td>
-                                        <td><input type="text" value="150" id="wasser_in_m3" style="width: 100%;"><input class="form-range" id="wasser_in_m3_slider" type="range" min="0" max="1000" value="150" style="width: 100%;"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8 col-lg-9 col-xl-9">
-                    <div id="graph">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section>
-            <div class="container">
-                <div>
-                    <p>Treibhausgasemissionen: <b><span id="thg_sum">10.58</span></b> t CO2-Äquivalent</p>
-                </div>
-                <div style="margin-bottom: 3em">
-                    <button class="btn btn-primary" id="download-pdf" type="button" style="background: #337822; border: #337822;">Download PDF</button>
-                </div>
-            </div>
-        </section>
-        <section class="clean-block clean-info dark">
-            <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info" style="--bs-info: #337822;--bs-info-rgb: 51,120,34;">Zertifikate kaufen ?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
-                </div>
+                <form style="border-top: 2px solid #337822">
+                    <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control item" type="email" id="email"></div>
+                    <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control" type="password" id="password"></div>
+                    <div class="mb-3">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
+                    </div><button class="btn btn-primary" type="submit" style="background: #337822; border: #337822;">Log In</button>
+                </form>
             </div>
         </section>
     </main>
@@ -116,8 +66,6 @@
     <script src="assets/js/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script src="assets/js/graph.js"></script>
-    <script src="assets/js/download_pdf.js"></script>
 </body>
 
 </html>
